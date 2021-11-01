@@ -23,7 +23,11 @@ Huixin Huang
 - Learn how backend service serves for the webpage
 
 ## Screenshots:
-![](https://github.com/NancyDong122463/homePageYananDong/blob/main/images/screen.png)
+![](img/1.jpeg)
+
+![](img/2.jpeg)
+
+![](img/3.jpeg)
 
 ## Tech requirements:
 Node.js (Express)
