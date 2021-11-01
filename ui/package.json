@@ -29,7 +29,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -51,7 +52,8 @@
   },
   "devDependencies": {
     "@mui/lab": "^5.0.0-alpha.53",
-    "eslint": "^8.1.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^8.3.0",
     "react-router-dom": "^5.3.0"
   },
   "proxy": "http://localhost:5000/"

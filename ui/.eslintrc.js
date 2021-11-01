@@ -7,6 +7,7 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
+        "plugin:react/recommended",
         "prettier"
     ],
     "parserOptions": {
@@ -21,5 +22,7 @@ module.exports = {
         "linebreak-style": ["error", "unix"],
         "quotes": ["error", "double"],
         "semi": ["error", "always"],
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
     }
 };
