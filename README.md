@@ -28,7 +28,9 @@ Huixin Huang
 
 ![](img/3.jpeg)
 
-## Tech requirements:
+![](img/4.png)
+
+## Tech Stack:
 Node.js (Express)
 
 MongoDB
@@ -40,6 +42,10 @@ Moment
 React
 
 Formik
+
+Eslint
+
+Docker
 
 ## Instructions to use:
 1. Install node.js on your computer: [node operation](https://nodejs.org/en/download/)

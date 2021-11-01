@@ -29,34 +29,3 @@ async function run() {
 }
 
 run()
-
-// app.get('/cars', (req, res) => {
-//     res.setHeader('Content-Type', 'application/json');
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.send([
-//         {
-//             name: 'a',
-//             price: 1,
-//             comment: 'this is a'
-//         },
-//         {
-//             name: 'b',
-//             price: 2,
-//             comment: 'this is b'
-//         },
-//         {
-//             name: 'c',
-//             price: 3,
-//             comment: 'this is c'
-//         },
-//         {
-//             name: 'd',
-//             price: 4,
-//             comment: 'this is d'
-//         }
-//     ])
-// })
-//
-// app.listen(port, () => {
-//     console.log(`Example app listening at http://localhost:${port}`)
-// })
