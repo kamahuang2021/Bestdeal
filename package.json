@@ -4,6 +4,8 @@
   "description": "This app is for second hand car retail in the market. The seller could update info about his car. The buyer could added favorite cars to the list.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "lint": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +26,7 @@
     "react-async": "^10.0.1"
   },
   "devDependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "eslint-config-prettier": "^8.3.0"
   }
 }

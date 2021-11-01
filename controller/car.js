@@ -64,7 +64,7 @@ router.get('/:id', auth, async (req, res) => {
 router.delete('/:id', auth, async (req, res) => {
     console.log(req.params)
     const id = req.params.id
-    Car.remove({_id: id}, (err, result) => {
+    Car.remove({_id: id}, (err) => {
         if (err) return console.log(err)
         res.redirect('/cars')
     })

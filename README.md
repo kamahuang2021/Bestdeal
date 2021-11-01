@@ -48,4 +48,4 @@ Formik
 4. Install backend dependencies using `npm install` at the project root directory
 5. Install frontend dependencies using `npm install` or `yarn add` at `/ui` directory
 6. Deploy mongodb locally using Docker via `docker run -d -p 27017:27017 mongodb:5.0.3`. For more information about Docker, please checkout [this](https://www.docker.com/get-started)
-7. Use `node index.js` to start the express server at `:5000` and use `npm start` to start the frontend at `:3000`
+7. Use `npm run start` to start the express server at `:5000` and use `npm start` to start the frontend at `:3000`
