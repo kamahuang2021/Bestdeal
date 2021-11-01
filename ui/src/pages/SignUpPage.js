@@ -1,14 +1,15 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect, useRef, useState} from 'react'
 import {useHttp} from '../hooks/http'
 import {AuthContext} from '../context/auth'
 import {SignUpForm} from "../components/users/signupForm";
+import {useForm} from "react-hook-form";
 
 export const SignUpPage = () => {
-    const auth = useContext(AuthContext)
     const {loading, request, error, clearError} = useHttp()
     const [form, setForm] = useState({
-        email: '', password: ''
+        email: '', password: '', full_name: '', confirm_password: ''
     })
+    // const [email, setEmail] = useState('')
 
     const signUpHandler = async () => {
         try {
@@ -21,6 +22,6 @@ export const SignUpPage = () => {
 
     const defaultValues = {email: "", password: "", confirm_password: "", full_name: ""}
     return (
-        <SignUpForm onSubmit={signUpHandler} defaultValues={defaultValues}/>
+        <SignUpForm title="Sign Up" onSubmit={signUpHandler} defaultValues={defaultValues} setForm={setForm} form={form}/>
     )
 }

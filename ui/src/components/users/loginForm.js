@@ -28,15 +28,21 @@ const validationSchema = yup.object({
 
 export const LoginForm = (props) => {
     const formik = useFormik({
-        initialValues: {
-            email: '',
-            password: ''
-        },
+        initialValues: props.defaultValues,
         validationSchema: validationSchema,
         onSubmit: (values) => {
             props.onSubmit(values)
         }
     })
+
+    const handleChange = (event) => {
+        formik.handleChange(event)
+        const value = event.target.value;
+        props.setForm({
+            ...props.form,
+            [event.target.name]: value
+        });
+    }
     return (
         <Box sx={style}>
             <h1>
@@ -50,7 +56,7 @@ export const LoginForm = (props) => {
                         name="email"
                         label="email"
                         value={formik.values.email}
-                        onChange={formik.handleChange}
+                        onChange={handleChange}
                         error={formik.touched.email && Boolean(formik.errors.email)}
                         helperText={formik.touched.email && formik.errors.email}
                     />
@@ -61,7 +67,7 @@ export const LoginForm = (props) => {
                         label="password"
                         type="password"
                         value={formik.values.password}
-                        onChange={formik.handleChange}
+                        onChange={handleChange}
                         error={formik.touched.password && Boolean(formik.errors.password)}
                         helperText={formik.touched.password && formik.errors.password}
                     />

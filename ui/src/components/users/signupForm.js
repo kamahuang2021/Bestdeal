@@ -39,10 +39,19 @@ export const SignUpForm = (props) => {
             props.onSubmit(values)
         }
     })
+
+    const handleChange = (event) => {
+        formik.handleChange(event)
+        const value = event.target.value;
+        props.setForm({
+            ...props.form,
+            [event.target.name]: value
+        });
+    }
     return (
         <Box sx={style}>
             <h1>
-                Sign Up
+                {props.title}
             </h1>
             <div>
                 <form onSubmit={formik.handleSubmit}>
@@ -52,7 +61,8 @@ export const SignUpForm = (props) => {
                         name="email"
                         label="email"
                         value={formik.values.email}
-                        onChange={formik.handleChange}
+                        // onChange={formik.handleChange}
+                        onChange={handleChange}
                         error={formik.touched.email && Boolean(formik.errors.email)}
                         helperText={formik.touched.email && formik.errors.email}
                     />
@@ -63,7 +73,8 @@ export const SignUpForm = (props) => {
                         label="password"
                         type="password"
                         value={formik.values.password}
-                        onChange={formik.handleChange}
+                        onChange={handleChange}
+                        // onChange={formik.handleChange}
                         error={formik.touched.password && Boolean(formik.errors.password)}
                         helperText={formik.touched.password && formik.errors.password}
                     />
@@ -74,7 +85,7 @@ export const SignUpForm = (props) => {
                         label="confirm_password"
                         type="password"
                         value={formik.values.confirm_password}
-                        onChange={formik.handleChange}
+                        onChange={handleChange}
                         error={formik.touched.confirm_password && Boolean(formik.errors.confirm_password)}
                         helperText={formik.touched.confirm_password && formik.errors.confirm_password}
                     />
@@ -84,7 +95,7 @@ export const SignUpForm = (props) => {
                         name="full_name"
                         label="full_name"
                         value={formik.values.full_name}
-                        onChange={formik.handleChange}
+                        onChange={handleChange}
                         error={formik.touched.full_name && Boolean(formik.errors.full_name)}
                         helperText={formik.touched.full_name && formik.errors.full_name}
                     />

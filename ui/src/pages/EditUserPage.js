@@ -19,6 +19,6 @@ export const EditUserPage = () => {
 
     const defaultValues = {email: "", password: "", confirm_password: "", full_name: ""}
     return (
-        <SignUpForm onSubmit={editUserHandler} defaultValues={defaultValues}/>
+        <SignUpForm onSubmit={editUserHandler} defaultValues={defaultValues} setForm={setForm} form={form}/>
     )
 }

@@ -12,13 +12,15 @@ export const LoginPage = () => {
 
     const loginHandler = async () => {
         try {
-            const data = await request('/users/login', 'POST', {...form})
+            const data = await request('http://localhost:5000/users/login', 'POST', {...form})
+            console.log(data)
             auth.login(data.token, data.userId)
         } catch (e) {
         }
     }
 
+    const defaultValues = {email: "", password: ""}
     return (
-        <LoginForm onSubmit={loginHandler}/>
+        <LoginForm onSubmit={loginHandler} defaultValues={defaultValues} setForm={setForm} form={form}/>
     )
 }

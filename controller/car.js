@@ -4,11 +4,9 @@ const auth = require('../middleware/auth')
 const router = Router()
 
 // Add new car.
-router.post('/cars', auth, async (req, res) => {
+router.post('/', auth, async (req, res) => {
     try {
         const {model, price, size, bought_time, comment} = req.body
-
-        console.log(req.body)
 
         const car = new Car({
             model: model,
@@ -17,28 +15,65 @@ router.post('/cars', auth, async (req, res) => {
             bought_time: bought_time,
             create_time: Date.now(),
             comment: comment,
+            owner: req.user.userId,
             likes: 0,
         })
-        car.save()
+
+        car.save(function (err) {
+            if (err) {
+                console.log(err)
+                res.status(500).json({message: 'Server cannot create new car'})
+            }
+        })
 
         res.redirect('/cars/' + car._id)
-        // res.status(201).json({car})
+        // res.status(201).json({message: 'Create Car successfully'})
     } catch (e) {
+        console.log(e)
+        res.status(500).json({message: ''})
+    }
+})
+
+// Get all cars
+router.get('/', auth, async (req, res) => {
+    try {
+        Car.find({}).populate('owner', {full_name: 1}).exec(function (error, user) {
+            if (error) {
+               res.status(500).json({message: error})
+            }
+            console.log(user)
+            res.json(user)
+        })
+
+    } catch (e) {
+        console.log(e)
         res.status(500).json({message: ''})
     }
 })
 
 // get car
-router.get('/cars/:id', auth, async (req, res) => {
-    const id = req.id
-    const car = await Car.findById(id)
+router.get('/:id', auth, async (req, res) => {
+    console.log(req.params)
+    const id = req.params.id
+    const car = await Car.findById(id).populate('owner', {full_name: 1})
+    console.log(car)
     res.json(car)
+})
+
+// delete car
+router.delete('/:id', auth, async (req, res) => {
+    console.log(req.params)
+    const id = req.params.id
+    Car.remove({_id: id}, (err, result) => {
+        if (err) return console.log(err)
+        res.redirect('/cars')
+    })
 })
 
 
 // edit car
 router.post(
-    '/cars/:id/edit',
+    '/:id/edit',
     auth,
     async (req, res) => {
         const id = req.id

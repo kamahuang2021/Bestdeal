@@ -7,7 +7,7 @@ const schema = new Schema({
     bought_time: {type: Date, required: true},
     comment: {type: String, default: true},
     created_time: {type: Date, required: true, default: Date.now()},
-    owner: {type: Types.ObjectId, ref: 'User'},
+    owner: {type: Types.ObjectId, ref: 'User', required: true},
     likes: {type: Number, required: true, default: 0, min: 0}
 })
 
