@@ -5,7 +5,6 @@ A website to help users share their collection of second-hand cars
 1. Users can create their own collection of second-hand cars
    of different prices, size and usage history
 2. Users can view others' posts and leave comments
-3. Users can order the posts based on time
 
 ## Author:
 Yanan Dong
