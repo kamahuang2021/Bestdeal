@@ -22,7 +22,7 @@ router.post('/', auth, async (req, res) => {
         car.save(function (err) {
             if (err) {
                 console.log(err)
-                res.status(500).json({message: 'Server cannot create new car'})
+                res.status(500).json({message: 'Server cannot create new car'}) //What if there is an error in creating a new car object?
             }
         })
 
@@ -30,7 +30,7 @@ router.post('/', auth, async (req, res) => {
         // res.status(201).json({message: 'Create Car successfully'})
     } catch (e) {
         console.log(e)
-        res.status(500).json({message: ''})
+        res.status(500).json({message: ''})// This will show empty message for any error
     }
 })
 
