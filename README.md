@@ -12,6 +12,9 @@ Yanan Dong
 
 Huixin Huang
 
+## Project Link
+[Direct to project] (https://)
+
 ## Class Link:
 [Web Development CS5610 2021 Fall](https://johnguerra.co/classes/webDevelopment_fall_2021/)
 
@@ -46,6 +49,17 @@ Formik
 Eslint
 
 Docker
+
+## Responsiility 
+Person 1
+-
+-
+-
+Person 2
+-
+-
+-
+
 
 ## Instructions to use:
 1. Install node.js on your computer: [node operation](https://nodejs.org/en/download/)
