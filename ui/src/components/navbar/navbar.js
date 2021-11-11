@@ -17,7 +17,7 @@ export const NavBar = (isAuthenticated) => {
     history.push("/");
   };
 
-  if (isAuthenticated) {
+//   if (isAuthenticated) {
     return (
       <>
         <nav id="navWrapper">
@@ -29,49 +29,56 @@ export const NavBar = (isAuthenticated) => {
                                         BestDeal
                   </NavLink>
                 </Typography>
-                <div>
+                { isAuthenticated ? 
+                  (<div>
                   <NavLink to='/cars' className="navlink-2">View Cars</NavLink>
-                </div>
-                <div>
-                  <NavLink to='/cars/new' className="navlink-2">Sell Car</NavLink>
-                </div>
-                {/*<div>*/}
-                {/*    <NavLink to={'/users/' + auth.userId} className="navlink-2">My Profile</NavLink>*/}
-                {/*</div>*/}
-                <div>
-                  <NavLink to='/logout' className="navlink-2" onClick={logoutHandler}>Logout</NavLink>
-                </div>
+                  </div>
+                  <div>
+                    <NavLink to='/cars/new' className="navlink-2">Sell Car</NavLink>
+                  </div>
+                  {/*<div>*/}
+                  {/*    <NavLink to={'/users/' + auth.userId} className="navlink-2">My Profile</NavLink>*/}
+                  {/*</div>*/}
+                  <div>
+                    <NavLink to='/logout' className="navlink-2" onClick={logoutHandler}>Logout</NavLink>
+                  </div>) :
+                  (<div>
+                    <NavLink to='/login' className="navlink-2">Login</NavLink>
+                  </div>
+                  <div>
+                    <NavLink to='/signup' className="navlink-2">Sign Up</NavLink>
+                  </div> )
               </Toolbar>
             </AppBar>
           </Box>
         </nav>
       </>
     );
-  }
+//   }
 
 
-  return (
-    <>
-      <nav id="navWrapper">
-        <Box sx={{flexGrow: 1}}>
-          <AppBar position="static" className="appbar">
-            <Toolbar>
-              <Typography sx={{flexGrow: 1}}>
-                <NavLink to='/cars' className="navlink-1">
-                                    BestDeal
-                </NavLink>
-              </Typography>
+//   return (
+//     <>
+//       <nav id="navWrapper">
+//         <Box sx={{flexGrow: 1}}>
+//           <AppBar position="static" className="appbar">
+//             <Toolbar>
+//               <Typography sx={{flexGrow: 1}}>
+//                 <NavLink to='/cars' className="navlink-1">
+//                                     BestDeal
+//                 </NavLink>
+//               </Typography>
 
-              <div>
-                <NavLink to='/login' className="navlink-2">Login</NavLink>
-              </div>
-              <div>
-                <NavLink to='/signup' className="navlink-2">Sign Up</NavLink>
-              </div>
-            </Toolbar>
-          </AppBar>
-        </Box>
-      </nav>
-    </>
-  );
+//               <div>
+//                 <NavLink to='/login' className="navlink-2">Login</NavLink>
+//               </div>
+//               <div>
+//                 <NavLink to='/signup' className="navlink-2">Sign Up</NavLink>
+//               </div>
+//             </Toolbar>
+//           </AppBar>
+//         </Box>
+//       </nav>
+//     </>
+//   );
 };
