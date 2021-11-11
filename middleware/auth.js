@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken') //Nice
 const config = require('../config/config.json')
 
 module.exports = (req, res, next) => {
