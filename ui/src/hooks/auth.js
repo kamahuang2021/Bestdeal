@@ -2,6 +2,8 @@ import {useState, useCallback, useEffect} from "react";
 
 const storageName = "bestdeal";
 
+// Nice hooks! But as I am not familiar with writing custom hooks, I thought hooks would typically
+// take some parameters. What is the benefit of doing this compared to just exporting pure functions?
 export const useAuth = () => {
   const [token, setToken] = useState(null);
   const [ready, setReady] = useState(false);
